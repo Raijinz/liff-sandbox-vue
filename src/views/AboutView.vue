@@ -5,11 +5,17 @@ import { reactive } from "vue";
 
 const state = reactive({ friendFlag: false });
 
-try {
-  const friendship = await liff.getFriendship();
-  state.friendFlag = friendship.friendFlag;
-} catch (error) {
-  console.error(error);
+async function getFriendship() {
+  try {
+    const friendship = await liff.getFriendship();
+    state.friendFlag = friendship.friendFlag;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+if (import.meta.env.PROD) {
+  getFriendship()
 }
 </script>
 

@@ -12,6 +12,8 @@ const router = createRouter({
       name: "home",
       component: HomeView,
       beforeEnter: async () => {
+        if (!import.meta.env.PROD) return true
+
         try {
           await liff.init({
             liffId: import.meta.env.VITE_LIFF_ID,
@@ -32,6 +34,8 @@ const router = createRouter({
       // which is lazy-loaded when the route is visited.
       component: AboutView,
       beforeEnter: async () => {
+        if (!import.meta.env.PROD) return true
+
         try {
           await liff.init({
             liffId: import.meta.env.VITE_LIFF_ID,
