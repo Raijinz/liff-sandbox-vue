@@ -31,6 +31,18 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: AboutView,
+      beforeEnter: async () => {
+        try {
+          await liff.init({
+            liffId: import.meta.env.VITE_LIFF_ID,
+            withLoginOnExternalBrowser: true,
+          });
+          await liff.i18n.setLang("th");
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
     },
   ],
 });
