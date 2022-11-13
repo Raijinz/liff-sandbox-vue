@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from "vue-router";
+import liff from '@line/liff'
 import HomeView from "../views/HomeView.vue";
 
 const router = createRouter({
@@ -8,6 +9,18 @@ const router = createRouter({
       path: "/",
       name: "home",
       component: HomeView,
+      beforeEnter: async () => {
+        try {
+          await liff.init({
+            liffId: import.meta.env.VITE_LIFF_ID,
+            withLoginOnExternalBrowser: true
+          })
+          await liff.i18n.setLang("th")
+          return true
+        } catch (error) {
+          return false
+        }
+      }
     },
     {
       path: "/about",
