@@ -1,6 +1,22 @@
+<script setup lang="ts">
+import TheEmbedSpotify from "@/components/TheEmbedSpotify.vue";
+import liff from "@line/liff";
+import { reactive } from "vue";
+
+const state = reactive({ friendFlag: false });
+
+try {
+  const friendship = await liff.getFriendship();
+  state.friendFlag = friendship.friendFlag;
+} catch (error) {
+  console.error(error);
+}
+</script>
+
 <template>
   <div class="about">
-    <h1>This is an about page</h1>
+    <p>Friendship: {{ state.friendFlag }}</p>
+    <TheEmbedSpotify />
   </div>
 </template>
 
