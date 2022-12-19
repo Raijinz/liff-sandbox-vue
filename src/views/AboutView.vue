@@ -15,7 +15,7 @@ async function getFriendship() {
 }
 
 if (import.meta.env.PROD) {
-  getFriendship()
+  getFriendship();
 }
 </script>
 
