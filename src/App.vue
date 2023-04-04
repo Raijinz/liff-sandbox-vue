@@ -33,8 +33,9 @@ import HelloWorld from "@/components/HelloWorld.vue";
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  height: 100svh;
-  background-color: black;
+  height: 100dvh;
+  background-color: red;
+  overflow: hidden;
 
   font-weight: normal;
 }
