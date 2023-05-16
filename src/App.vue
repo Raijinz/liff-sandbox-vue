@@ -34,7 +34,7 @@ import HelloWorld from "@/components/HelloWorld.vue";
   margin: 0 auto;
   padding: 2rem;
   height: 100dvh;
-  background-color: red;
+  background-color: white;
   overflow: hidden;
 
   font-weight: normal;
