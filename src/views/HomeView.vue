@@ -23,8 +23,8 @@ const previewFiles = (event: Event) => {
       multiple
       @change="previewFiles"
     />
-    <p v-for="(file, index) in imageFiles" :key="index">
-      {{ file.name }}
-    </p>
+    <li v-for="n in imageFiles?.length" :key="n">
+      {{ imageFiles?.item(n - 1)?.name }}
+    </li>
   </main>
 </template>
