@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import type { Ref } from "vue";
+import liff from "@line/liff";
 
 const imageFiles: Ref<FileList | null | undefined> = ref();
 const imageFile: Ref<File | null | undefined> = ref();
@@ -9,6 +10,9 @@ const previewFiles = (event: Event) => {
   imageFile.value = target.files?.[0] || null;
   imageFiles.value = target.files;
 };
+const enableCapture = computed(() => {
+  return liff.getOS() === "android";
+});
 // import TheWelcome from "@/components/TheWelcome.vue";
 </script>
 
@@ -19,7 +23,7 @@ const previewFiles = (event: Event) => {
       id="file"
       type="file"
       accept="image/*"
-      capture
+      :capture="enableCapture"
       multiple
       @change="previewFiles"
     />
