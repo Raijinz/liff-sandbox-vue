@@ -3,16 +3,17 @@ import { computed, ref } from "vue";
 import type { Ref } from "vue";
 import liff from "@line/liff";
 
+const os = ref(liff.getOS());
 const imageFiles: Ref<FileList | null | undefined> = ref();
 const imageFile: Ref<File | null | undefined> = ref();
+const enableCapture = computed(() => {
+  return os.value === "android";
+});
 const previewFiles = (event: Event) => {
   const target = event.target as HTMLInputElement;
   imageFile.value = target.files?.[0] || null;
   imageFiles.value = target.files;
 };
-const enableCapture = computed(() => {
-  return liff.getOS() === "android";
-});
 // import TheWelcome from "@/components/TheWelcome.vue";
 </script>
 
