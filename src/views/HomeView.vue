@@ -11,6 +11,9 @@ const previewFiles = (event: Event) => {
   imageFile.value = target.files?.[0] || null;
   imageFiles.value = target.files;
 };
+const redirect = () => {
+  location.replace("https://www.google.co.th");
+};
 // import TheWelcome from "@/components/TheWelcome.vue";
 </script>
 
@@ -37,5 +40,6 @@ const previewFiles = (event: Event) => {
     <li v-for="n in imageFiles?.length" :key="n">
       {{ imageFiles?.item(n - 1)?.name }}
     </li>
+    <button type="button" @click="redirect">Go to Google (TH)</button>
   </main>
 </template>
