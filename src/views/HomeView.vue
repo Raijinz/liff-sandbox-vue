@@ -14,7 +14,7 @@ const previewFiles = (event: Event) => {
 const redirect = () => {
   // location.replace("https://www.google.co.th");
   liff.openWindow({
-    url: "https://www.google.co.th",
+    url: "https://www.muangthai.co.th/th/vdo-call?utm_source=website&utm_medium=ow-aw-mtlwebsite--VideoCall-SmartLinkPro101Global-pid10183-20230503&utm_campaign=alnnnncc67",
   });
 };
 // import TheWelcome from "@/components/TheWelcome.vue";
