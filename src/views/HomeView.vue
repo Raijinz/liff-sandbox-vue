@@ -18,11 +18,12 @@ const redirect = () => {
   });
 };
 // import TheWelcome from "@/components/TheWelcome.vue";
-redirect();
+// redirect();
 </script>
 
 <template>
   <main>
+    <a href="tel:+66810413477">Call me</a>
     <!-- <TheWelcome /> -->
     <!-- <input
       v-if="os !== 'android'"
