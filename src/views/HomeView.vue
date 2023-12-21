@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import liff from "@line/liff";
+
 /* import { ref } from "vue";
 import type { Ref } from "vue"; */
 // import liff from "@line/liff";
@@ -26,11 +28,16 @@ function redirectToOA() {
     )}/${encodeURIComponent("@activate")}`
   );
 }
+
+function logout() {
+  liff.logout();
+}
 </script>
 
 <template>
   <main>
     <button type="button" @click="redirectToOA">To @activate KBank Live</button>
+    <button type="button" @click="logout">Logout</button>
     <!-- <a href="tel:+66810413477">Call me</a> -->
     <!-- <TheWelcome /> -->
     <!-- <input
