@@ -2,7 +2,10 @@
 import liff from "@line/liff";
 
 function openGoogle() {
-  liff.openWindow({ url: "https://www.google.co.th", external: false });
+  liff.openWindow({
+    url: "https://www.africau.edu/images/default/sample.pdf",
+    external: false,
+  });
 }
 </script>
 
