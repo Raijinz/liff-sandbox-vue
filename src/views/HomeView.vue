@@ -11,6 +11,7 @@ function openGoogle() {
 
 <template>
   <main>
+    <input type="text" autocomplete="one-time-code" />
     <button type="button" @click="openGoogle">
       Open Google in the new window
     </button>
